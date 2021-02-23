@@ -1,0 +1,26 @@
+{{EmployeeFName}}
+<br>
+{{EmployeeID}}
+<br>
+<!-- {{GetEmployee()}} -->
+<br>
+<!-- <input type="text" value="Michael"> -->
+<input type="text" placeholder="FirstName" [value]="EmployeeFName">
+<br>
+<input type="text" placeholder="LastName" [value]="EmployeeLName">
+<br>
+<textarea placeholder="Adress" (keyup)="evtAddress($event)"></textarea>
+<br>
+<!-- Adress is : {{EmployeeAddress}} -->
+<br>
+<textarea placeholder="Confirm Adress"
+ [(ngModel)]="EmployeeAddress"></textarea>
+<br>
+Adress is : {{EmployeeAddress}}
+<br>
+<input type="button" value="GetEmpName" (click)="GetEmployee()">
+<br>
+<span [innerText]="EmployeeName"></span>
+<!-- Exersise [value]="EmployeeAddress" near at 12 line
+Change the text to checkbox
+Look at the bootstrap file-->
