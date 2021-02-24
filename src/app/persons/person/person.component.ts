@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-person',
@@ -7,9 +7,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PersonComponent implements OnInit {
 
-  EmployeeFName = "John";
-  EmployeeLName = "Smith";
-  EmployeeID = 6;
+  EID = "";
+  EmpLName = "";
+  EmpFName = "";
+
+
+  @Input() EmployeeElement = {
+    EID: "",
+    EmpLName: "",
+    EmpFName: "",
+  }
+
+  @Output() addEmployee = new EventEmitter<{
+    EID: string,
+    EmpLName: string,
+    EmpFName: string,
+  }>();
+
+
+  @ViewChild("EID") vEID: ElementRef;
+  @ViewChild("EmpFName") vEmpFName: HTMLElement;
+  @ViewChild("EmpLName") vEmpLName: HTMLElement;
+
 
   EmployeeAddress = "";
   EmployeeName = "";
@@ -18,7 +37,7 @@ export class PersonComponent implements OnInit {
   AdressBGColor = "";
   IsAdressCSSClass = false;
   GetEmployee() {
-    this.EmployeeName = this.EmployeeFName + this.EmployeeLName;
+    this.EmployeeName = this.EmpFName + this.EmpLName;
     return this.EmployeeName;
   }
 
@@ -40,7 +59,14 @@ export class PersonComponent implements OnInit {
   ngOnInit(): void {
   }
 
-
+  AddEmployee(empIDEl: HTMLInputElement, empFNameEl: HTMLInputElement, empLNameEl: HTMLInputElement) {
+    //console.dir(empEl);
+    this.addEmployee.emit({
+      EID: empIDEl.value,
+      EmpFName: empFNameEl.value,
+      EmpLName: empLNameEl.value
+    })
+  }
 
 
 }

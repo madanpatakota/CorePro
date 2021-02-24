@@ -1,6 +1,6 @@
-<!-- {{EmployeeFName}}
+<!-- {{EmpFName}}
 <br>
-{{EmployeeID}}
+{{EID}}
 <br> -->
 <!-- {{GetEmployee()}} -->
 <!-- <br> -->
@@ -10,12 +10,24 @@
     <div>
         <h4>Employee Form</h4>
     </div>
+
+    <div class="form-group row">
+        <div class="col-md-2">
+            <label class="col-form-label">Employee ID</label>
+        </div>
+        <div class="col-md-5">
+            <input #EID type="text" class="form-control" placeholder="Employee ID" 
+            [value]="EmployeeElement.EID">
+        </div>
+    </div>
+
     <div class="form-group row">
         <div class="col-md-2">
             <label class="col-form-label">FirstName</label>
         </div>
         <div class="col-md-5">
-            <input type="text" class="form-control" placeholder="FirstName" [value]="EmployeeFName">
+            <input #EmpFName type="text" class="form-control" placeholder="FirstName"
+             [value]="EmployeeElement.EmpFName">
         </div>
     </div>
 
@@ -24,71 +36,78 @@
             <label class="col-form-label">LastName</label>
         </div>
         <div class="col-md-5">
-            <input class="form-control" type="text" placeholder="LastName" [value]="EmployeeLName">
+            <input #EmpLName class="form-control" type="text" placeholder="LastName"
+             [value]="EmployeeElement.EmpLName">
         </div>
     </div>
 
 
-    <div class="form-group row">
+    <!-- <div class="form-group row">
         <div class="col-md-2">
             <label class="col-form-label">Adress</label>
         </div>
         <div class="col-md-5">
             <textarea class="form-control" placeholder="Adress" (keyup)="evtAddress($event)"></textarea>
         </div>
-    </div>
+    </div> -->
     <!-- Adress is : {{EmployeeAddress}} -->
 
-    <div class="form-group row">
+
+    <!-- <div class="form-group row">
         <div class="col-md-2">
             <label class="col-form-label">Confirm Adress</label>
         </div>
         <div class="col-md-5">
-            <textarea class="form-control" placeholder="Confirm Adress" [(ngModel)]="EmployeeAddress"></textarea>
-            <!-- {{EmployeeAddress}} -->
-        </div>
-    </div>
+            <textarea class="form-control" placeholder="Confirm Adress" [(ngModel)]="EmployeeAddress"></textarea> -->
+    <!-- {{EmployeeAddress}} -->
+    <!-- </div>
+    </div> -->
 
 
     <!-- Property dataBinding and event Binding
     ngModel -->
-    <div class="row">
+    <!-- <div class="row">
         <div class="col-md-2">
         </div>
-        <div *ngIf="IsAdressSpecified ; else NoAdress" class="col-md-2">
-            <!-- <span [ngStyle] = "{backgroundColor : AdressColor}"> Address is : {{EmployeeAddress}}</span> -->
-            <span [ngStyle]="{backgroundColor : AdressBGColor}" [ngClass]="{'AdressCSSClass' : IsAdressCSSClass}">
+        <div *ngIf="IsAdressSpecified ; else NoAdress" class="col-md-2"> -->
+    <!-- <span [ngStyle] = "{backgroundColor : AdressColor}"> Address is : {{EmployeeAddress}}</span> -->
+    <!-- <span [ngStyle]="{backgroundColor : AdressBGColor}" [ngClass]="{'AdressCSSClass' : IsAdressCSSClass}">
                 Address is : {{EmployeeAddress}}</span>
         </div>
         <ng-template #NoAdress>
             <span> Address is : Not Specified</span>
         </ng-template>
-    </div>
+    </div> -->
 
 
-    <div class="row">
+    <!-- <div class="row">
         <div class="col-md-2">
         </div>
         <div class="col-md-5">
             <input class="btn btn-primary" type="button" value="Get Emp Name" (click)="GetEmployee()">
         </div>
+    </div> -->
+
+    <div>
+        <div class="col-md-2">
+        </div>
+        <div class="col-md-5">
+            <input class="btn btn-primary" type="button" value="Add" 
+            (click)="AddEmployee(EID,EmpFName,EmpLName)">
+        </div>
     </div>
 
-
     <!-- event Binding -->
-
+    <!-- 
     <div class="row">
         <div class="col-md-2">
         </div>
         <div class="col-md-5">
             <span appApplyRedColor [innerText]="EmployeeName"></span>
         </div>
-    </div>
+    </div> -->
 
 </div>
 <!-- Exersise [value]="EmployeeAddress" near at 12 line
 Change the text to checkbox
 Look at the bootstrap file-->
-
-
-
