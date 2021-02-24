@@ -1,3 +1,33 @@
-<!-- <app-person></app-person>
+<app-person></app-person>
 
-{{Employees}} -->
+<div style="margin: 10px;">
+    <h4>Employee Details</h4>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>
+                    Employee ID
+                </th>
+                <th>
+                    Employee First Name
+                </th>
+                <th>
+                    Employee Last Name
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let employeeRow of EmployeeRows">
+                <td>
+                    {{employeeRow.EID}}
+                </td>
+                <td>
+                    {{employeeRow.FirstName}}
+                </td>
+                <td>
+                    {{employeeRow.LastName}}
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

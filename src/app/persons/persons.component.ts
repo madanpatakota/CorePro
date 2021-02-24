@@ -12,6 +12,11 @@ export class PersonsComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  EmployeeRows = [{ EID: 1, FirstName: "John", LastName: "Smith" },
+  { EID: 2, FirstName: "Michael", LastName: "Van" },
+  { EID: 3, FirstName: "Andrew", LastName: "Fuller" },];
+  //Employees = ["madan","101" , 21];
+
 
 
 }
