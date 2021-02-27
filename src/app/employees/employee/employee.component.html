@@ -16,8 +16,7 @@
             <label class="col-form-label">Employee ID</label>
         </div>
         <div class="col-md-5">
-            <input #EID type="text" class="form-control" placeholder="Employee ID" 
-            [value]="EmployeeElement.EID">
+            <input #EID type="text" class="form-control" placeholder="Employee ID" [value]="EmployeeElement.EID">
         </div>
     </div>
 
@@ -27,7 +26,7 @@
         </div>
         <div class="col-md-5">
             <input #EmpFName type="text" class="form-control" placeholder="FirstName"
-             [value]="EmployeeElement.EmpFName">
+                [value]="EmployeeElement.EmpFName">
         </div>
     </div>
 
@@ -36,11 +35,13 @@
             <label class="col-form-label">LastName</label>
         </div>
         <div class="col-md-5">
-            <input #EmpLName class="form-control" type="text" placeholder="LastName"
-             [value]="EmployeeElement.EmpLName">
+            <input #EmpLName class="form-control" type="text" placeholder="LastName" [value]="EmployeeElement.EmpLName">
         </div>
     </div>
 
+    <div>
+        <ng-content></ng-content>
+    </div>
 
     <!-- <div class="form-group row">
         <div class="col-md-2">
@@ -92,8 +93,7 @@
         <div class="col-md-2">
         </div>
         <div class="col-md-5">
-            <input class="btn btn-primary" type="button" value="Add" 
-            (click)="AddEmployee(EID,EmpFName,EmpLName)">
+            <input class="btn btn-primary" type="button" value="Add" (click)="AddEmployee(EID,EmpFName,EmpLName)">
         </div>
     </div>
 

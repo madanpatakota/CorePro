@@ -1,10 +1,10 @@
-import { Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild, ViewEncapsulation } from '@angular/core';
+import { Component, ContentChild, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-employee',
   templateUrl: './employee.component.html',
   styleUrls: ['./employee.component.css'],
-  encapsulation:ViewEncapsulation.ShadowDom
+  encapsulation:ViewEncapsulation.None
 })
 export class EmployeeComponent implements OnInit {
 
@@ -13,11 +13,7 @@ export class EmployeeComponent implements OnInit {
   EmpFName = "";
 
 
-  @Input() EmployeeElement = {
-    EID: "",
-    EmpLName: "",
-    EmpFName: "",
-  }
+  @Input() EmployeeElement = { EID: "", EmpLName: "", EmpFName: ""}
 
   @Output() addEmployee = new EventEmitter<{
     EID: string,
@@ -30,6 +26,7 @@ export class EmployeeComponent implements OnInit {
   @ViewChild("EmpFName") vEmpFName: HTMLElement;
   @ViewChild("EmpLName") vEmpLName: HTMLElement;
 
+  // @ContentChild("EmpCity") vEmpCity:ElementRef;
 
   EmployeeAddress = "";
   EmployeeName = "";

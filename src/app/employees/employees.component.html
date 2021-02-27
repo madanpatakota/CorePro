@@ -1,6 +1,11 @@
+<app-employee [EmployeeElement]="EmployeeRow" (addEmployee)="onEmployeeCreated($event)">
 
-<app-employee [EmployeeElement] = "EmployeeRow" 
-(addEmployee)= "onEmployeeCreated($event)"></app-employee>
+
+    <div class="form-group row">
+        <div class="col-md-2">City : </div>
+        <div class="col-md-5"><input type="text" class="form-control" value="" #EmpCity></div>
+    </div>
+</app-employee>
 
 
 
@@ -35,8 +40,7 @@
                     {{employeeRow.EmpLName}}
                 </td>
                 <td>
-                    <input type="button" class="btn btn-primary"
-                     (click)="evtCurrentRow(employeeRow)" value="Select">
+                    <input type="button" class="btn btn-primary" (click)="evtCurrentRow(employeeRow)" value="Select">
                 </td>
             </tr>
         </tbody>

@@ -9,9 +9,7 @@ export class EmployeesComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
-  }
-
+  
   EmployeeRows = [{ EID: 1, EmpFName: "John", EmpLName: "Smith" },
   { EID: 2, EmpFName: "Michael", EmpLName: "Van" },
   { EID: 3, EmpFName: "Andrew", EmpLName: "FYuller" },];
@@ -30,6 +28,12 @@ export class EmployeesComponent implements OnInit {
     })
     console.log("listening ", $event);
   }
+
+  ngOnInit(): void {
+  }
+
+
+
 
 
 }
