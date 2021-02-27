@@ -2,15 +2,15 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { PersonComponent } from './persons/person/person.component';
-import { PersonsComponent } from './persons/persons.component';
+import { EmployeeComponent } from './employees/employee/employee.component';
+import { EmployeesComponent } from './employees/employees.component';
 import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PersonComponent,
-    PersonsComponent
+    EmployeeComponent,
+    EmployeesComponent
   ],
   imports: [
     BrowserModule,
