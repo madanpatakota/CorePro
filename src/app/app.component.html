@@ -1,16 +1,39 @@
 <!-- <app-employee></app-employee> -->
-<div style="margin: 3em">
+<!-- <div style="margin: 3em">
     <app-Employees></app-Employees>
-</div>
+</div> -->
 
 
 <!-- <p #paragraph>this is the paragraph</p> -->
+<ul>
 
-<ng-template [ngIf]="false">
-    <p>
-        Hai....
-    </p>
+    <li *ngFor="let item of items;index as index">
+
+        {{item.container}} -- {{item.template}}
+        -----------------------------------------
+        <ng-container
+         *ngIf="item.isClicked" 
+             [ngTemplateOutlet]="customTemplate" #Nitem
+             [ngTemplateOutletContext]="{Details : item.container}">
+        </ng-container>
+        <!-- <div #madan></div> -->
+        <button (click)="evtClick(Nitem,item)">Click</button>
+    </li>
+</ul>
+
+<!-- <ng-container #{{Name}}></ng-container> -->
+
+<ng-template let-Details="Details" #customTemplate>
+    <app-test-component [inputcontainer]="Details"></app-test-component>
+    {{Details}}
 </ng-template>
+
+<!-- <button (click)="evtClick(abc)"></button> -->
+<!-- <ng-template #kdf>Sample</ng-template>
+<button>Click</button> -->
+
+
+
 
 
 <!-- <p appApplyRedColor [ChangeDefaultColor] = "'Green'"> Sample text</p> -->
